@@ -20,13 +20,15 @@ for x in range(len(lista)):
     for y in listb:
         output.append(lista[x] + y)
 
-print("___KERNING PAIRS____")
+print("#_____KERNING PAIRS______#")
 print(*output, sep="\n")
 
 for a in range(len(output)):
+    finalWords.append("\n###_______"+output[a]+"______###\n")
     for i in range(len(loadWords)):
         if output[a] in loadWords[i]:
             finalWords.append(loadWords[i])
+    
 
-print("\n \n___KERNABLE WORDS____ ")            
+print("\n \n#_____KERNABLE WORDS______#")            
 print (*finalWords, sep="\n")
