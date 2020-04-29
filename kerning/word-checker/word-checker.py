@@ -1,7 +1,7 @@
 from random import shuffle
 
 Variable([
-    dict(name="Language", ui="PopUpButton", args=dict(items=['EN-Lat', 'FR-Lat', 'RU-Cyr'])),
+    dict(name="Language", ui="PopUpButton", args=dict(items=['EN-Lat', 'FR-Lat', 'GU-Guj', 'GR-Gre', 'RU-Cyr'])),
     dict(name="Right", ui="EditText"),
     dict(name="Left", ui="EditText"),
     dict(name="Case", ui="PopUpButton", args=dict(items=['UC_UC', 'UC_lc', 'lc_lc'])),
@@ -22,6 +22,20 @@ if Language == 1:
         loadWords = loadWords[:words]
         
 if Language == 2:
+    with open('guj_newscrawl_2016_100K-words.txt', 'r', encoding='utf-8') as f:
+        words = 10000
+        loadWords = [l[:-1] for l in f.readlines()]
+        shuffle(loadWords)
+        loadWords = loadWords[:words]
+
+if Language == 3:
+    with open('ell_newscrawl_2017_100K-words.txt', 'r', encoding='utf-8') as f:
+        words = 10000
+        loadWords = [l[:-1] for l in f.readlines()]
+        shuffle(loadWords)
+        loadWords = loadWords[:words]
+        
+if Language == 4:
     with open('rus_newscrawl-public_2018_100K-words.txt', 'r', encoding='utf-8') as f:
         words = 10000
         loadWords = [l[:-1] for l in f.readlines()]
