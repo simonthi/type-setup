@@ -1,9 +1,9 @@
 Variable([
-    dict(name="StringA", ui="EditText"),
-    dict(name="StringB", ui="EditText"),
+    dict(name="Right", ui="EditText"),
+    dict(name="Left", ui="EditText"),
     ], globals())
-lista = list(StringA)
-listb = list(StringB)
+lista = list(Left)
+listb = list(Right)
 output = []
 
 for x in lista:

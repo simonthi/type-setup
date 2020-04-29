@@ -1,17 +1,34 @@
 from random import shuffle
 
-with open('eng_news_2016_100K-words-UC.txt', 'r', encoding='utf-8') as f:
-    words = 10000
-    loadWords = [l[:-1] for l in f.readlines()]
-    shuffle(loadWords)
-    loadWords = loadWords[:words]
-
-
 Variable([
+    dict(name="Language", ui="PopUpButton", args=dict(items=['EN-Lat', 'FR-Lat', 'RU-Cyr'])),
     dict(name="Right", ui="EditText"),
     dict(name="Left", ui="EditText"),
     dict(name="Case", ui="PopUpButton", args=dict(items=['UC_UC', 'UC_lc', 'lc_lc'])),
     ], globals())
+ 
+if Language == 0:
+    with open('eng_news_2016_100K-words-UC.txt', 'r', encoding='utf-8') as f:
+        words = 10000
+        loadWords = [l[:-1] for l in f.readlines()]
+        shuffle(loadWords)
+        loadWords = loadWords[:words]
+        
+if Language == 1:
+    with open('fra_mixed-typical_2012_100K-words.txt', 'r', encoding='utf-8') as f:
+        words = 10000
+        loadWords = [l[:-1] for l in f.readlines()]
+        shuffle(loadWords)
+        loadWords = loadWords[:words]
+        
+if Language == 2:
+    with open('rus_newscrawl-public_2018_100K-words.txt', 'r', encoding='utf-8') as f:
+        words = 10000
+        loadWords = [l[:-1] for l in f.readlines()]
+        shuffle(loadWords)
+        loadWords = loadWords[:words]
+
+
 lista = list(Right)
 listb = list(Left)
 output = []
